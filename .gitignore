@@ -1,0 +1,7 @@
+*.*
+!.gitattributes
+!.gitignore
+!README.rst
+!MANIFEST.rst
+!.gitkeep
+!*.py

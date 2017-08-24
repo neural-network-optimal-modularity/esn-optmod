@@ -1,0 +1,45 @@
+import bigred2_transient_process
+import numpy as np
+
+experimental_parameters = {
+    'q1_list': np.linspace(0.0, 0.5, 10),
+    'q2_list': [0.3],
+    'q1': 'mu',
+    'q2': 'input_fraction',
+    'init_state': (0.0, 1.0),
+    'max_iter': 1000,
+    'num_trials': 10,
+    'input_dimension': 1,
+    'input_type': None,
+    'input_params': {},
+    'input_fraction': 0.3,
+    'input_gain': 2.0,
+    'input_weight_bounds': (1., 1.0),
+    'neuron_type': 'sigmoid',
+    'neuron_pars': {'c':1, 'e':10},
+    'output_neuron_type': 'heaviside',
+    'output_neuron_pars': {'threshold': 0.5},
+    'num_reservoir_samplings': 12,
+    'N': 1000,
+    'mu': 0.25,
+    'k': 7,
+    'maxk': 7,
+    'minc':10,
+    'maxc':10,
+    'deg_exp':1.0,
+    'lower_reservoir_bound': -0.1,
+    'upper_reservoir_bound': 1.0,
+    'reservoir_weight_scale': 1.,
+    'spectral_factor': None,
+    'temp_dir_ID': 0, 
+    'full_path': '/N/u/njrodrig/BigRed2/topology_of_function/',#'/nobackup/njrodrig/topology_of_function/',
+    'worker_file': 'bigred2_transient_worker.py',
+    'num_threads': 128,
+    'command_prefix': 'trans_N1k_c1_e10_ws1_IC0-1_mu',
+    'qsub_nodes': 4,
+    'qsub_ppn': 32,
+    'qsub_time': '00:30:00',
+    'qsub_cpu_type': 'debug_cpu'
+}
+
+bigred2_transient_process.run_qsub(experimental_parameters)
